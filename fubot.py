@@ -1,15 +1,12 @@
 import os,random
 import discord
-from dotenv import load_doten
+from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.getenv('Fbot')
 
 client = discord.Client()
 
-def sing(verse):
-    for i in verse:
-        await message.channel.send(i)
 
 @client.event
 async def on_ready():
@@ -17,8 +14,12 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+
     if message.author ==  client.user:
         return
+
+    for i in verse:
+        await message.channel.send(i)
 
     ShottaFlowNLE = [
         'yeah, yeah, yeah',
@@ -49,6 +50,7 @@ async def on_message(message):
         'B**** N****, you my son, so that make me a father, yeah'
 
     ]
+
     ShottaFlowBlueface = [
         'Yeah, Yeah, Aight',
         'B**** Im a Loc, Mac with a scope',
@@ -72,7 +74,9 @@ async def on_message(message):
     ]
 
     if message.content == "yeah":
-        sing(ShottaFlowNLE)
+        for i in ShottaFlowNLE:
+            await message.channel.send(i)
     if message.content == "blueface baby":
-        sing(ShottaFlowBlueface)
+        for i in ShottaFlowBlueface:
+            await message.channel.send(i)
     
