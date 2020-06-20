@@ -17,9 +17,6 @@ async def on_message(message):
     if message.author ==  client.user:
         return
 
-    for i in verse:
-        await message.channel.send(i)
-
     ShottaFlowNLE = [
         'yeah, yeah, yeah',
         'I am a menace, keep me a rack just like tennis',
@@ -78,4 +75,5 @@ async def on_message(message):
     if message.content == "blueface baby":
         for i in ShottaFlowBlueface:
             await message.channel.send(i)
-    
+
+client.run(TOKEN)
