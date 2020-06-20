@@ -1,4 +1,4 @@
-import os,random
+import os,random,time
 import discord
 from dotenv import load_dotenv
 
@@ -72,8 +72,10 @@ async def on_message(message):
     if message.content == "yeah":
         for i in ShottaFlowNLE:
             await message.channel.send(i)
+            time.sleep(0.5)
     if message.content == "blueface baby":
         for i in ShottaFlowBlueface:
             await message.channel.send(i)
+            time.sleep(0.5)
 
 client.run(TOKEN)
